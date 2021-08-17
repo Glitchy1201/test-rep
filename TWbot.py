@@ -1,4 +1,5 @@
 import discord
+from discord import channel
 from discord.ext import commands
 
 client = commands.Bot(command_prefix = '(')
@@ -32,7 +33,7 @@ async def clear(ctx, *, amount):
 @client.command(aliases=['dm','DM','D'])
 async def d(ctx, user: discord.User, *, message=None, amount=1):
     await ctx.channel.purge(limit=amount)
-    message = message or ('read')
+    message = message
     await user.send(message)
 
 @client.command(aliases=['s'])
@@ -48,6 +49,7 @@ async def annoy (ctx, *, who: discord.User, amount=1):
         await who.send('im anooying you')
 
 @client.event
-async def on_message(ctx, *, me: discord.User):
-    await ctx.send('ok', me)
-client.run('NzU2Njk3MzcwMTI5MDcyMTc5.X2VnVw.-cpAUPLIwMR7GWZ1cdZtgvl0CLk')
+async def on_message(ctx):
+    await ctx.channel.send(ctx)
+
+client.run('NzU2Njk3MzcwMTI5MDcyMTc5.X2VnVw.ZeyLLhZVp-3G6ad0E8BemQiThpk')

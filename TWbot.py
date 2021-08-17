@@ -52,4 +52,4 @@ async def annoy (ctx, *, who: discord.User, amount=1):
 async def on_message(ctx):
     await ctx.channel.send(ctx)
 
-client.run('NzU2Njk3MzcwMTI5MDcyMTc5.X2VnVw.ZeyLLhZVp-3G6ad0E8BemQiThpk')
+client.run('')
